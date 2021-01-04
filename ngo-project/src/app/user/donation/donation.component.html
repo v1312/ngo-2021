@@ -1,0 +1,20 @@
+<div class="main">
+    <div id="dashboard">
+        <h1 id="user-dashboard-label">Donation Type</h1>
+        <div id="user-dashboard">
+            <div class="content">
+                <div class="row">
+                    <mat-card class="col-lg-3"  *ngFor="let doTy of donationType">
+                        <mat-card-content (click)="personalDetails()">
+                            {{doTy.donationType |convertLetter}}
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

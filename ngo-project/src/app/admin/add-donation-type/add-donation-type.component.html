@@ -1,0 +1,39 @@
+
+            <div id="details">
+                <div id="donation-type-list">
+                    <h1 id="list-of-donation-type-label">List of Donation Type |</h1>
+                    <h3 id="go-back-label" routerLink=""><button mat-button>Go Back</button></h3>
+                    
+                    <div id="donation-type-list-details">
+                      <h3></h3>
+                   
+                      <div id="add-donation-type-form">
+                        <form #donationTypeForm="ngForm" (ngSubmit)="onSubmit()">
+                          <div class="row">
+                            <div class="form-group col-lg-6">
+                                
+                                <input type="text" class="form-control" [(ngModel)]="doantionTypeModel.donationType" name="donationType"
+                                    placeholder="Enter Donation Type" required minlength="3" #donationType="ngModel"
+                                    [class.is-invalid]="donationType.invalid && donationType.touched">
+                                <div *ngIf="donationType.touched && donationType.errors">
+                                    <div class="alert alert-danger" *ngIf="donationType.errors.required ">Donation Type is required!</div>
+                                    <div class="alert alert-danger" *ngIf="donationType.errors.minlength ">Donation Type should be 3 characters!</div>
+                                </div>
+                            </div>
+                
+                
+                            <div class="form-group col-lg-6" mat-dialog-actions *ngIf="donationType">
+                               <button [disabled]="donationTypeForm.form.invalid" class="btn btn-primary form-control col-md-7" id="mat-success">Add New Donation Type</button>
+                            </div>
+                          </div>           
+                        </form>
+                    </div>
+                  
+
+  
+                      </div>
+                  </div>
+            </div>
+
+  <router-outlet></router-outlet>
+

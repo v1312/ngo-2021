@@ -1,0 +1,41 @@
+
+            <div id="details">
+                <div id="donation-type-list">
+                    <h1 id="list-of-donation-type-label">List of Donation Type |</h1>
+                    <h3 id="go-back-label" routerLink=""><button mat-button>Go Back</button></h3>
+                    
+                    <div id="donation-type-list-details">
+                      <h3></h3>
+                   
+
+
+
+                        <table class="table">
+                          <thead>
+                            <tr >
+                              <th scope="col" >Id</th>
+                              <th scope="col">Donation Type</th>
+                              <th scope="col" id="delete-title">Delete</th>
+                              
+                            </tr>
+                          </thead>
+                          <tbody  ><ng-container *ngIf="donatType.length > 0 else empty">
+                            <tr  *ngFor="let doTy of donatType">
+                                <td>{{doTy._id}}</td> 
+                                <td>{{doTy.donationType}}</td> 
+                                <td><button   (click)="deleteDonationType(doTy)"  mat-flat-button color="warn"><mat-icon>delete</mat-icon></button></td>
+                                
+                              </tr>
+                            </ng-container>
+                          </tbody>
+                          <ng-template #empty>
+                            <h3 id="empty-data"> No Records!</h3>
+                          </ng-template>
+                          
+                        </table>    
+                      </div>
+                  </div>
+            </div>
+
+  <router-outlet></router-outlet>
+

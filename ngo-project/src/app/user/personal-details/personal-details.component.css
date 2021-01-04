@@ -1,0 +1,42 @@
+#body{
+    padding: 25px;
+    height: 100vh;
+}
+
+#donate-details-label{
+    padding-left: 25px;
+    padding-top: 25px;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+#donate-label{
+    float: left;
+}
+
+#go-back-label{
+    float: left;    
+}
+
+form{
+    padding-left: 20px;
+}
+
+
+#empty-data{
+    padding:  10px;
+}
+#final-checkout{
+    background-color: lightgray;
+    padding-top: 15px;
+    height: 100%;
+}
+#final-checkout-btn{
+    padding-bottom:25px ;
+}
+
+#remove,#empty-cart,#update-cart{
+    color: red;
+    text-decoration: underline;
+}
+

@@ -1,0 +1,35 @@
+
+
+<div id="body">
+    
+    <mat-card id="details-card">
+        <div id="donation-details-label">    
+            <h1 id="donation-label">Donation Details |</h1>
+            <h3 id="go-back-label" routerLink="/admin-dashboard/donation-details"><button mat-button>Go Back</button></h3>
+        </div><br>
+        
+<div id="data" *ngIf="donationDetails">
+    
+    <table>
+        <tr><td>ID</td><td>:</td><td>{{donationDetails._id}}</td></tr>
+        <tr><td>Name</td><td>:</td><td>{{donationDetails.firstName|convertLetter}}  {{donationDetails.lastName | convertLetter}}</td></tr>
+        <tr><td>Email</td><td>:</td><td>{{donationDetails.email}}</td></tr>
+        <tr><td>Phone</td><td>:</td><td>{{donationDetails.phoneNumber}}</td></tr>
+        <tr><td>Address</td><td>:</td><td>{{donationDetails.contactDetails.addressOne}}</td></tr>
+        <tr><td> </td><td>:</td><td>{{donationDetails.contactDetails.addressTwo}}</td></tr>
+        <tr><td> </td><td>:</td><td>{{donationDetails.contactDetails.city}}</td></tr>
+        <tr><td> </td><td>:</td><td>{{donationDetails.contactDetails.state}}</td></tr>
+        <tr><td> </td><td>:</td><td>{{donationDetails.contactDetails.country}}</td></tr>
+        <tr><td> </td><td>:</td><td>{{donationDetails.contactDetails.postalCode}}</td></tr>
+        <tr><td>Donation Type</td><td>:</td><td>{{donationDetails.donationType}}</td></tr>
+        <tr><td>Amount</td><td>:</td><td>{{donationDetails.amount}}</td></tr>
+        <tr><td>Date</td><td>:</td><td>{{donationDetails.date}}</td></tr>
+    
+</table>
+
+</div>    
+        
+                        
+    </mat-card>
+  <router-outlet></router-outlet>
+</div>   

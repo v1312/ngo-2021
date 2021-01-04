@@ -1,0 +1,33 @@
+#body{
+    padding: 25px;
+    height: 100vh;
+}
+
+#edit-user-details-label{
+    padding-left: 25px;
+    padding-top: 25px;
+    height: auto;
+}
+
+#edit-user-label{
+    float: left;
+}
+
+#go-back-label{
+    float: left;    
+}
+
+#edit-user-form{
+    margin-top: 50px;
+}
+#form-group{
+    text-align: left;
+}
+
+#user-details{
+    padding: 25px;
+}
+
+#empty-data{
+    padding:  10px;
+}

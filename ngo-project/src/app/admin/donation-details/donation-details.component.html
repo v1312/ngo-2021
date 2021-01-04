@@ -1,0 +1,48 @@
+
+            <div id="details">
+                <div id="donation-list">
+                    <h1 id="list-of-donation-label">Donation Details |</h1>
+                    <h3 id="go-back-label" routerLink=""><button mat-button>Go Back</button></h3>
+                    <div id="donation-details">
+                      <h3></h3>
+                        <table class="table">
+                          <thead>
+                            <tr >
+                              <th scope="col" >Id</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Amout</th>
+                              <th scope="col">Donation Type</th>
+                              <th scope="col">View</th>
+                              <th scope="col">Delete</th>
+                                                                                     
+                            </tr>
+                          </thead>
+                          <tbody  ><ng-container *ngIf="donerList.length > 0 else empty">
+                            <tr  *ngFor="let doli of donerList ">
+                                <td>{{doli._id }}</td> 
+                                <td>{{doli.firstName | convertLetter}} {{doli.lastName |convertLetter}}</td> 
+                                <td>{{doli.email}}</td>
+                                <td>{{doli.date | date}}</td>
+                                <td>{{doli.amount | currency:'USD'}}</td>
+                                <td>{{doli.donationType}}</td>
+                                <td ><button (click)="viewDonationData(doli)" mat-flat-button color="primary"  ><mat-icon>visibility</mat-icon></button></td>
+                                <td><button  (click)="deleteDonationData(doli)"   mat-flat-button color="warn"><mat-icon>delete</mat-icon></button></td>
+                                 
+                              </tr>
+                            </ng-container>
+                          </tbody>
+                          <ng-template #empty>
+                            <h3 id="empty-data"> No Records!</h3>
+                          </ng-template>
+                          
+                        </table>    
+                      </div>
+                  </div>
+            </div>
+            
+            
+
+  <router-outlet></router-outlet>
+

@@ -1,0 +1,65 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "firstName": "Leanne ",
+      "lastName": "Graham",
+      "email": "lengr@gmail.com",
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "firstName": "Leanne ",
+      "lastName": "Graham",
+      "email": "lengr@gmail.com",
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "firstName": "Leanne ",
+      "lastName": "Graham",
+      "email": "lengr@gmail.com",
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "firstName": "Vrushang",
+      "lastName": "Patel",
+      "email": "vup.1312@gmail.com",
+      "password": "8975",
+      "role": "admin",
+      "id": 4
+    }
+  ],
+  "donationType": [
+    {
+      "id": 1,
+      "donationType": "Run for the sun"
+    },
+    {
+      "id": 2,
+      "donationType": "Memorial Gift"
+    },
+    {
+      "id": 3,
+      "donationType": "Mission Trip"
+    },
+    {
+      "donationType": "Mighty Warriors",
+      "id": 4
+    }
+  ],
+  "donation": [
+    {
+      "donationType": "Mighty Warriors",
+      "firstName": "Vrushang",
+      "lastName": "Patel",
+      "email": "patelvrushang13@gmail.com",
+      "date": "2020-12-24",
+      "amount": "29760",
+      "id": 1
+    }
+  ]
+}

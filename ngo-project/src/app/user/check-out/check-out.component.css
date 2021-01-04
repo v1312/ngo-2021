@@ -1,0 +1,53 @@
+.main{
+    height: 100vh;
+}
+#dashboard{
+    padding-top: 25px;
+    padding-left: 25px;
+    float: left;
+    width: 100%;
+    height: 100vh;
+}
+#user-dashboard{
+    padding-top: 70px;
+}
+#user-dashboard-label{
+    float: left;
+}
+
+.row{
+    text-align: center;
+}
+
+mat-card-content{
+    text-align: center;
+}
+
+.col-lg-3{
+    margin: 10px;
+    
+}
+
+#go-back-label{
+    float: left;    
+}
+
+#empty-data{
+    padding:  10px;
+}
+#final-checkout{
+    background-color: lightgray;
+    padding-top: 15px;
+    height: 100%;
+}
+#final-checkout-btn{
+    padding-bottom:25px ;
+}
+
+button{
+    width: 100%;
+}
+#remove,#empty-cart,#update-cart{
+    color: red;
+    text-decoration: underline;
+}
