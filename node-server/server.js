@@ -255,13 +255,13 @@ async function sendMail(new_object, callback) {
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'patelvrushang13@gmail.com',
-        pass: 'Washington2020'
+        user: '',
+        pass: ''
       }
     });
     
     var mailOptions = {
-      from: 'patelvrushang13@gmail.com',
+      from: '',// user email Id
       to: new_object.email,
       subject: 'Your Order Summary',
       html: '<p>Hi'+' ' +new_object.firstName+' '+new_object.lastName+',  '+'</p><br><br>' +
