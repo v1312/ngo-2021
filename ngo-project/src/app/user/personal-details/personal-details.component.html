@@ -23,7 +23,7 @@
                             [class.is-invalid]="firstName?.invalid && firstName?.touched">
                             <div *ngIf="firstName?.touched && firstName?.errors">
                                 <div class="alert alert-danger" *ngIf="firstName?.errors?.required ">First name is required!</div>
-                                <!-- <div class="alert alert-danger" *ngIf="firstName.errors?.minlength ">First name should be 4 characters!</div> -->
+                                <div class="alert alert-danger" *ngIf="firstName.errors?.minlength ">First name should be 4 characters!</div>
                             </div>{{firstName?.errors?.required}}
                     </div>
                         
