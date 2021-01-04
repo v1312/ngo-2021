@@ -49,90 +49,86 @@ export class PersonalDetailsComponent implements OnInit {
     }
       
 
-  ngOnInit(): void {
-    this.doTyService.getDonationType().subscribe(
-      (data) => this.donatType = data,
-      ( error ) => this.errorMsg = error,
-      () => console.log('completed!')
-    )
-    
-
-    this.personalDetailsForm = this.fb.group({
-      donationType: this.fb.array([], [Validators.required]),
-      firstName:['',[Validators.required]],
-        lastName:[''],
-        email:[''],
-        phoneNumber:[''],
-        
-     
-      contactDetails:new FormGroup({
-        addressOne:new FormControl(''),
-        addressTwo:new FormControl(''),
-        city:new FormControl(''),
-        state:new FormControl(''),
-        postalCode:new FormControl(''),
-        country:new FormControl(''),
+    ngOnInit(): void {
+      this.doTyService.getDonationType().subscribe(
+        (data) => this.donatType = data,
+        ( error ) => this.errorMsg = error,
+        () => console.log('completed!')
+      )
       
-    }),
-    
-        date:new FormControl(''),
-       amount:new FormControl(''),
-       
-    })     
-  }
-
   
- get firstName(){
-   return this.personalDetailsForm.get('firstName')
- }
-
- get lastName(){
-  return this.personalDetailsForm.get('lastName')!.value
-}
-
-get email(){ 
-  return this.personalDetailsForm.get('email')!.value
-}
-
-get phoneNumber(){
-  return this.personalDetailsForm.get('phoneNumber')!.value
-}
-
-get addressOne(){
-  return this.personalDetailsForm.get('contactDetails')!.get('addressOne')!.value
-}
-
-get addressTwo(){
-  return this.personalDetailsForm.get('contactDetails')!.get('addressTwo')!.value
-}
-
-get city(){
-  return this.personalDetailsForm.get('contactDetails')!.get('city')!.value
-}
-
-get state(){
-  return this.personalDetailsForm.get('contactDetails')!.get('state')!.value
-}
-
-get postalCode(){
-  return this.personalDetailsForm.get('contactDetails')!.get('postalCode')!.value
-}
-
-get country(){
-  return this.personalDetailsForm.get('contactDetails')?.get('country')!.value
-}
-
-get date(){
-  return this.personalDetailsForm.get('date')!.value
-}
-
-get amount(){
-  return this.personalDetailsForm.get('amount')!.value
-}
-
-// get donationType(){
-//   return this.personalDetailsForm.get('donationType')!.value 
-// }
+      this.personalDetailsForm = this.fb.group({
+        donationType: this.fb.array([], [Validators.required]),
+        firstName:['',[Validators.required,Validators.minLength(2),Validators.maxLength(16)]],
+        lastName:['',[Validators.required,Validators.minLength(2),Validators.maxLength(16)]],
+        email:['',[Validators.required,Validators.minLength(6),Validators.maxLength(32)]],
+        phoneNumber:['',[Validators.required,Validators.minLength(10),Validators.maxLength(11)]],
+          
+       
+        contactDetails:new FormGroup({
+          addressOne:new FormControl('',[Validators.required,Validators.minLength(8)]),
+          addressTwo:new FormControl('',[Validators.required,Validators.minLength(2)]),
+          city:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(16)]),
+          state:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(16)]),
+          postalCode:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(6)]),
+          country:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(16)]),
+        
+      }),
+      
+        date:new FormControl('',[Validators.required]),
+        amount:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(16)]),
+         
+      })     
+    }
+  
+    
+   get firstName(){
+     return this.personalDetailsForm.get('firstName')
+   }
+  
+   get lastName(){
+    return this.personalDetailsForm.get('lastName')
+  }
+  
+  get email(){ 
+    return this.personalDetailsForm.get('email')
+  }
+  
+  get phoneNumber(){
+    return this.personalDetailsForm.get('phoneNumber')
+  }
+  
+  get addressOne(){
+    return this.personalDetailsForm.get('contactDetails')
+  }
+  
+  get addressTwo(){
+    return this.personalDetailsForm.get('contactDetails')!.get('addressTwo')
+  }
+  
+  get city(){
+    return this.personalDetailsForm.get('contactDetails')!.get('city')
+  }
+  
+  get state(){
+    return this.personalDetailsForm.get('contactDetails')!.get('state')
+  }
+  
+  get postalCode(){
+    return this.personalDetailsForm.get('contactDetails')!.get('postalCode')
+  }
+  
+  get country(){
+    return this.personalDetailsForm.get('contactDetails')?.get('country')
+  }
+  
+  get date(){
+    return this.personalDetailsForm.get('date')
+  }
+  
+  get amount(){
+    return this.personalDetailsForm.get('amount')
+  }
 
   
 previous(){
