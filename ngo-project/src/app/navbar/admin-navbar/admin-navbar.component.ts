@@ -16,7 +16,6 @@ export class AdminNavbarComponent implements OnInit {
     let details=[];
     if(localStorage.getItem('token')){
       details = JSON.parse(localStorage.getItem('token')||'{}');
-      
       console.log(details)
     
     
