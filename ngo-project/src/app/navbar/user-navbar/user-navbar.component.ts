@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 
-
 @Component({
-  selector: 'app-admin-navbar',
-  templateUrl: './admin-navbar.component.html',
-  styleUrls: ['./admin-navbar.component.css']
+  selector: 'app-user-navbar',
+  templateUrl: './user-navbar.component.html',
+  styleUrls: ['./user-navbar.component.css']
 })
-export class AdminNavbarComponent implements OnInit {
+export class UserNavbarComponent implements OnInit {
+
   loginData: any;
 
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
     let details=[];
-    if(localStorage.getItem('token')){
-      details = JSON.parse(localStorage.getItem('token')||'{}');
+    if(localStorage.getItem('_token')){
+      details = JSON.parse(localStorage.getItem('_token')||'{}');
       
       console.log(details)
     
@@ -27,3 +27,4 @@ export class AdminNavbarComponent implements OnInit {
     this.authService.logOut()
   }
 }
+

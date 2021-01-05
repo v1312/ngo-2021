@@ -56,6 +56,7 @@ export class PersonalDetailsComponent implements OnInit {
         () => console.log('completed!')
       )
       
+      
   
       this.personalDetailsForm = this.fb.group({
         donationType: this.fb.array([], [Validators.required]),

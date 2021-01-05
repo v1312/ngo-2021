@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {MatMenuModule} from '@angular/material/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,6 +43,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AddDonationTypeComponent } from './admin/add-donation-type/add-donation-type.component';
 import { ConvertLetterPipe } from './customPipe/convert-letter.pipe';
 import { DonationViewComponent } from './admin/donation-view/donation-view.component';
+import { UserNavbarComponent } from './navbar/user-navbar/user-navbar.component';
+import { UserInboxComponent } from './user/user-inbox/user-inbox.component';
 
 
 @NgModule({
@@ -72,6 +74,8 @@ import { DonationViewComponent } from './admin/donation-view/donation-view.compo
     AddDonationTypeComponent,
     ConvertLetterPipe,
     DonationViewComponent,
+    UserNavbarComponent,
+    UserInboxComponent,
     
   ],
   imports: [
@@ -93,7 +97,8 @@ import { DonationViewComponent } from './admin/donation-view/donation-view.compo
     MatDatepickerModule,
     MatStepperModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatMenuModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

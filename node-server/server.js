@@ -311,17 +311,16 @@ app.post('/api/ngo/user/login',async(req,res) => {
                 let email=user.email
                 let payload = {subject: userID}
                 let token = jwt.sign(payload,'secretKey')
-                
-                
-                res.status(200).send({token,rOle,email})
+                let result = {token,user}
+                res.status(200).send({result,rOle})
                 console.log('Admin login successfuly')
             }else{
                 let rOle=user.role
                 let email=user.email
                 let _payload = {subject: userID}
                 let _token = jwt.sign(_payload,'secretKey')
-                let result = {_token,user,rOle}
-                res.status(200).send({result})
+                let _result = {_token,user,rOle}
+                res.status(200).send({_result})
                 console.log(_token,rOle,user)
                 console.log('User login successfuly')
             

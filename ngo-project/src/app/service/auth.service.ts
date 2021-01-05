@@ -14,9 +14,6 @@ export class AuthService {
     return this.http.post<any>(this.url, user)
   }
 
-  userData(){
-    
-  }
 
   loggedIn() {
     return !!localStorage.getItem('_token')    

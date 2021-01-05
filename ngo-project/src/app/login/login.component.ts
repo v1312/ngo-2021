@@ -48,33 +48,21 @@ export class LoginComponent implements OnInit {
   
  
   doLogin() {
-    // const userData= this.loginForm.value
-    // this.auService.loginUser(userData)
-    // .subscribe(
-    //   res => {localStorage.setItem('_token', res.token)
-    //   this.router.navigate(['/user-dashboard'])
-        
-    //   },
-    //   err => console.log(err)
-    // )
+    
     var user:any=this.loginForm.value
     console.log(user)
     
-//     console.log(this.userList)
-// if(this.userList.role===role)
-
-  
-// {
   console.log(this.loginForm.value)
   
     this.auService.loginUser(this.loginForm.value)
       .subscribe(
         res => {if(res.rOle==="admin"){
           
-          localStorage.setItem('token',res.token)
+          localStorage.setItem('token',JSON.stringify(res.result))
+          
           this.router.navigateByUrl('/admin-dashboard')
         }else{
-          localStorage.setItem('_token',res._token)
+          localStorage.setItem('_token',JSON.stringify(res._result))
           console.log(res._token)
           this.router.navigateByUrl('/user-dashboard')
         }
