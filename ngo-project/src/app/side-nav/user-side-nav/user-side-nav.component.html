@@ -7,10 +7,14 @@
       <span>User Dashboard</span>
   </mat-list-item>
   
+  <mat-list-item  routerLink="/user-dashboard/donation-history">
+    <mat-icon>history</mat-icon>
+    <span>Donation History</span>
+</mat-list-item>
   
   <mat-list-item  routerLink="/user-dashboard/check-out">
     <mat-icon>shopping_cart</mat-icon>
-    <span>Cart</span>
+    <span *ngIf="checkOutDetails">Cart ({{checkOutDetails.length}})</span>
 </mat-list-item>
   
   </mat-nav-list>  

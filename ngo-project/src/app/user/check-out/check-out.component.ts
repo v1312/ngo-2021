@@ -63,6 +63,7 @@ deleteDetails(id:any){
     let result:any=this.checkOutDetails.slice(id)
     localStorage.setItem('DonationDetails',JSON.stringify(result))
     this.checkOutDetails=result;
+    location.reload();
     
   }
   console.log(id)
@@ -76,7 +77,7 @@ updateDetails(id:any){
 
 emptyCart(){
   localStorage.removeItem("DonationDetails");
-  this.router.navigateByUrl('/user-dashboard')
+  location.reload();
 }   
 
 }

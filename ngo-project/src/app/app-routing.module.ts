@@ -19,6 +19,7 @@ import { UserAuthGuard } from './service/guard/user-auth.guard';
 import { DonationComponent } from './user/donation/donation.component';
 import { AddDonationTypeComponent } from './admin/add-donation-type/add-donation-type.component';
 import { DonationViewComponent } from './admin/donation-view/donation-view.component';
+import { UserInboxComponent } from './user/user-inbox/user-inbox.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   {path: 'user-dashboard', component:UserDashboardComponent,canActivate:[UserAuthGuard] ,
     children:[
       {path: 'donation',component:DonationComponent,canActivate:[UserAuthGuard]},
+      {path: 'donation-history',component:UserInboxComponent,canActivate:[UserAuthGuard]},
       {path: 'check-out',component:CheckOutComponent,canActivate:[UserAuthGuard]},
       {path: 'personal-details', component:PersonalDetailsComponent,canActivate:[UserAuthGuard] },
     ]
